@@ -32,3 +32,29 @@ body {
   min-height: 100vh;
   padding: 0 20px;
 }
+
+/* My Button  */
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  white-space: nowrap;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.MyButton_default {
+  background-color: #ececec;
+  color: #000;
+}
+
+.MyButton_positive {
+  background-color: #64c964;
+  color: #fff;
+}
+
+.MyButton_negative {
+  background-color: #fd565f;
+  color: #fff;
+}
