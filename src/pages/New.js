@@ -1,4 +1,4 @@
-import DiaryEditor from "../components/diaryEditor";
+import DiaryEditor from "../components/DiaryEditor";
 
 const New = () => {
   return (
