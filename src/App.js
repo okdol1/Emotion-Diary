@@ -8,12 +8,16 @@ import New from "./pages/New";
 
 const reducer = (state, action) => {
   let newState = [];
+
   switch (action.type) {
     case "INIT": {
       return action.data;
     }
     case "CREATE": {
-      newState = [action.data, ...state];
+      const newItem = {
+        ...action.data,
+      };
+      newState = [newItem, ...state];
       break;
     }
     case "REMOVE": {
@@ -29,6 +33,8 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(newState));
+  return newState;
 };
 
 export const DiaryStateContext = React.createContext();
@@ -73,12 +79,13 @@ function App() {
   const dataId = useRef(0);
 
   // CREATE
-  const onCreate = (data, content, emotion) => {
+  const onCreate = (date, content, emotion) => {
+    console.log({ date, content, emotion });
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
-        date: new Date(Date).getTime(),
+        date: new Date(date).getTime(),
         content,
         emotion,
       },

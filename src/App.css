@@ -204,6 +204,25 @@ header button {
   gap: 2%;
 }
 
+.DiaryEditor textarea {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+}
+
+.DiaryEditor .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* EmotionItem */
 .EmotionItem {
   cursor: pointer;
