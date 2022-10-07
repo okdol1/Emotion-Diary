@@ -10,7 +10,7 @@ const Home = () => {
 
   const [data, setData] = useState([]);
   const [curDate, setCurDate] = useState(new Date());
-  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth(+1)}월`;
+  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
   useEffect(() => {
     if (diaryList.length >= 1) {
@@ -23,7 +23,11 @@ const Home = () => {
       const lastDate = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        // 마지막날짜만이 아닌 시, 분, 초 까지 입력할 수 있음
+        0,
+        23,
+        59,
+        59
       ).getTime(); // 이번년도 이번월의 마지막 날짜
 
       setData(
